@@ -1,13 +1,27 @@
-x = 5
+txt = "abrakadabra"
 
-if x > 4:
-    print('pierwszy if')
+for letter in txt:
+    print('- ', letter)
 
-if x == 3:
-    print('drugi if')
-elif x == 5:
-    print('elif 2')
-elif x >= 0:
-    print('elif')
-else:
-    print('else')
+
+names = ["Ada", "Julia", "Ruby", "Perl"]
+
+for step in names:
+    print('Hello!', step)
+
+
+for number in range(5, 20, 2):
+    print('->', number)
+
+print('----------------')
+for index in range(4):
+    print(index, names[index])
+
+for index, elem in enumerate(txt):
+    print(index, elem)
+
+print('---------')
+
+counter = len(txt)
+for index in range(0, counter, 2):
+    print(index, txt[index])
