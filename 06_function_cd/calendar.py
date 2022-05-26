@@ -2,10 +2,11 @@ def show_month(month_name, month_days):
     print('\n', month_name)
 
     for day in month_days:
+        day += 1
         if day < 10:
             day = '0' + str(day)
 
-        if (int(day) + 1) % 7 == 0:
+        if (int(day)) % 7 == 0:
             print(day)
         else:
             print(day, end=' ')
