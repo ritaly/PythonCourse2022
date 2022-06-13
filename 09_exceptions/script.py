@@ -1,6 +1,6 @@
-class WeatherError(Exception):
-    '''custom error'''
-    pass
+# class WeatherError(Exception):
+#     '''custom error'''
+#     pass
 
 def get_weather():
     # pobiera z api infomarcje o pogodzie
@@ -15,7 +15,7 @@ def get_weather():
     elif weather == 'rain':
         return '🌧'
     else:
-        raise WeatherError('Unknown weather')
+        raise TypeError('Unknown weather')
 
 def main():
     print('Hello!')
