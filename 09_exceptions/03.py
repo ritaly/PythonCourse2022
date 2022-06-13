@@ -1,5 +1,5 @@
 def main():
-    items = ['a', 'abc', 5, 5.0, [5, 3], (1, 3), 0, True, None, {}]
+    items = ['a', 'abc', 5, 5.0, [5, 3], (1, 3), 0, True, False, None, {}]
 
     try:
         id = int(input('Podaj index ->' ))
