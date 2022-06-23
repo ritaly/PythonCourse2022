@@ -11,6 +11,9 @@ class Product:
     def product_buy(self, money):
         return "Sold" if money >= self.price else "Its too expensive"
 
+    def product_try_on(self, size):
+        return "It fits" if size == self.size else "Its not for you"
+
 
 class Shop:
     def __init__(self, products=[]):
@@ -34,7 +37,8 @@ def main():
     store = [tshirt, dress, shoes]
     my_shop = Shop(store)
     my_shop.show_all()
-    my_shop.buy(1, 10)
+    my_money = 100
+    my_shop.buy(1, my_money)
 
 
 
