@@ -16,8 +16,22 @@ class Student:
     def __repr__(self):
         return self.first.capitalize() + " " + self.last.capitalize() + " średnia: " + str(self.avg)
 
+    @property
     def email(self):
         return f'{self.last}.{self.first}@{self.university_code}.com'
+
+    @property
+    def fullname(self):
+        return f'{self.last.capitalize()} {self.first.capitalize()}'
+
+    @fullname.setter
+    def fullname(self, last_first):
+        self.last, self.first = last_first.split()
+
+    @fullname.deleter
+    def fullname(self):
+        self.last, self.first = None, None
+        print('Twoje dane zostały usunięte!')
 
     def grant_scholarship(self):
         if self.avg >= self.min_avg:
@@ -57,18 +71,32 @@ def main():
     # print(obj_arek)
     # obj_arek.grant_scholarship()
 
-    obj_arek.set_university_code('uniadam')
-    print(obj_anna.email())
+    # obj_arek.set_university_code('uniadam')
+    # print(obj_anna.email())
+    #
+    # today = datetime.date.today()
+    # print('Is Anna on university?', obj_anna.academic_day(today))
+    #
+    # saturday = datetime.datetime.strptime('2022-07-09', '%Y-%m-%d')
+    # print('2022-06-09 is academic day? ', Student.academic_day(saturday))
+    #
+    # polish_holiday = datetime.datetime.strptime('2022-01-06', '%Y-%m-%d')
+    # print('2022-01-06 is academic day? ', Student.academic_day(saturday))
 
-    today = datetime.date.today()
-    print('Is Anna on university?', obj_anna.academic_day(today))
+    # print(obj_anna.email)
+    # obj_anna.last = 'Smith'
+    # print(obj_anna.email)
 
-    saturday = datetime.datetime.strptime('2022-07-09', '%Y-%m-%d')
-    print('2022-06-09 is academic day? ', Student.academic_day(saturday))
 
-    polish_holiday = datetime.datetime.strptime('2022-01-06', '%Y-%m-%d')
-    print('2022-01-06 is academic day? ', Student.academic_day(saturday))
+    print(obj_anna.fullname)
+    obj_anna.fullname = 'Zamężna Anna'
+    print(obj_anna.fullname)
+    print(obj_anna.last)
+    print(obj_anna.first)
 
+    del obj_anna.fullname
+    print(obj_anna.last)
+    print(obj_anna.first)
 
 
 if __name__ == '__main__':
