@@ -1,5 +1,6 @@
 import datetime
 import holidays
+import random
 
 
 class Student:
@@ -15,6 +16,17 @@ class Student:
 
     def __repr__(self):
         return self.first.capitalize() + " " + self.last.capitalize() + " średnia: " + str(self.avg)
+
+    @property
+    def username(self):
+        # numbers = []
+        # for _ in range(6):
+        #     numbers.append(str(random.randint(0, 9)))
+
+        numbers = [str(random.randint(0, 9)) for _ in range(6)]
+
+        code = ''.join(numbers)
+        return f'{self.first}{self.last[0:3]}{code}'
 
     @property
     def email(self):
@@ -88,15 +100,17 @@ def main():
     # print(obj_anna.email)
 
 
-    print(obj_anna.fullname)
-    obj_anna.fullname = 'Zamężna Anna'
-    print(obj_anna.fullname)
-    print(obj_anna.last)
-    print(obj_anna.first)
+    # print(obj_anna.fullname)
+    # obj_anna.fullname = 'Zamężna Anna'
+    # print(obj_anna.fullname)
+    # print(obj_anna.last)
+    # print(obj_anna.first)
+    #
+    # del obj_anna.fullname
+    # print(obj_anna.last)
+    # print(obj_anna.first)
 
-    del obj_anna.fullname
-    print(obj_anna.last)
-    print(obj_anna.first)
+    print(obj_anna.username)
 
 
 if __name__ == '__main__':
